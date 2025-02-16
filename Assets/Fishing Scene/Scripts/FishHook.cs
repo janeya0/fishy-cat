@@ -28,28 +28,19 @@ public class FishHook : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("COLLISION");
         if (other.gameObject.name.Equals("fish1"))
         {
-            Debug.Log("fish");
             GlobalGameManager.Instance.PlayerStats.AddCoins(1);
-            // logic.AddScore(1);
         } else if (other.gameObject.name.Equals("fish2"))
         {
-            Debug.Log("fish");
             GlobalGameManager.Instance.PlayerStats.AddCoins(2);
-            // logic.AddScore(2);
         } else if (other.gameObject.name.Equals("fish3"))
         {
-            Debug.Log("fish");
             GlobalGameManager.Instance.PlayerStats.AddCoins(3);
-            // logic.AddScore(3);
         }
         else if (other.gameObject.name.Equals("fish4"))
         {
-            Debug.Log("fish");
             GlobalGameManager.Instance.PlayerStats.AddCoins(4);
-            // logic.AddScore(4);
         }
 
         Destroy(other.gameObject);
