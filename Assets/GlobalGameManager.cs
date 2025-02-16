@@ -8,6 +8,7 @@ public class GlobalGameManager : MonoBehaviour
     public static GlobalGameManager Instance { get; private set; }
     [SerializeField] private PlayerStats playerStats;
     public PlayerStats PlayerStats => playerStats;
+    public bool isFTUE = true;
 
     // Start is called before the first frame update
     void Start()

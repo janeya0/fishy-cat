@@ -24,9 +24,9 @@ public class CatManager : MonoBehaviour
             yield return null;
         }
 
-        for (int i = 0; i < StaticScoreHolder.fishCaughtToBeIntroduced.Length; ++i)
+        for (int i = 0; i < GlobalGameManager.Instance.PlayerStats.levelUpThresholds.Count; ++i)
         {
-            if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= StaticScoreHolder.fishCaughtToBeIntroduced[i])
+            if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= GlobalGameManager.Instance.PlayerStats.levelUpThresholds[i])
             {
                 temp = Instantiate(cats[i], spawnPoints[i].transform.position, Quaternion.identity);
                 temp.name = "Cat";

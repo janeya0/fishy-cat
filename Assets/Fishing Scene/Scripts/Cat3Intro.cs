@@ -22,7 +22,7 @@ public class Cat3Intro : MonoBehaviour
     void Update()
     {
         if (GlobalGameManager.Instance.PlayerStats.TotalCoins >=
-            StaticScoreHolder.fishCaughtToBeIntroduced[index] &&
+            GlobalGameManager.Instance.PlayerStats.levelUpThresholds[index] &&
             !cat3IntroPlayed)
         {
             cat3IntroPlayed = true;

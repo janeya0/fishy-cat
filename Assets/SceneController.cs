@@ -33,6 +33,23 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(Scene.Menu.ToString());
     }
+    private IEnumerator FTUEGlobalGameManagerInstantiated()
+    {
+        while (GlobalGameManager.Instance == null || GlobalGameManager.Instance.PlayerStats == null)
+        {
+            // wait 1 frame
+            yield return null;
+        }
+
+        if (GlobalGameManager.Instance != null && GlobalGameManager.Instance.isFTUE)
+        {
+            GlobalGameManager.Instance.isFTUE = false;
+            SceneManager.LoadScene(Scene.Intro.ToString());
+        } else
+        {
+            SceneManager.LoadScene(Scene.Home.ToString());
+        }
+    }
     
     public void LoadFTUEScene()
     {
@@ -42,14 +59,17 @@ public class SceneController : MonoBehaviour
             Destroy(musicObj[i]);
         }
 
-        if (!StaticScoreHolder.introPlayed)
-        {
-            StaticScoreHolder.introPlayed = true;
-            SceneManager.LoadScene(Scene.Intro.ToString());
-        } else
-        {
-            SceneManager.LoadScene(Scene.Home.ToString());
-        }
+        StartCoroutine(FTUEGlobalGameManagerInstantiated());
+        
+
+        // if (!StaticScoreHolder.introPlayed)
+        // {
+        //     StaticScoreHolder.introPlayed = true;
+        //     SceneManager.LoadScene(Scene.Intro.ToString());
+        // } else
+        // {
+        //     SceneManager.LoadScene(Scene.Home.ToString());
+        // }
     }
 
     public void LoadInstructionsPage() 

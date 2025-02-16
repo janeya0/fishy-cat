@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class FiveFishText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        StartCoroutine(WaitForGlobalGameManager());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator WaitForGlobalGameManager()
     {
+        while (GlobalGameManager.Instance == null || GlobalGameManager.Instance.PlayerStats == null)
+        {
+            // wait 1 frame
+            yield return null;
+        }
         if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= 5)
         {
             Destroy(this.gameObject);

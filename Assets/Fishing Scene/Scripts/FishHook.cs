@@ -1,20 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FishHook : MonoBehaviour
 {
     public static FishHook HookInstance;
     public Rigidbody2D rb;
-    public LogicManager logic;
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float dirX = Input.GetAxis("Horizontal");
@@ -41,8 +35,6 @@ public class FishHook : MonoBehaviour
         {
             GlobalGameManager.Instance.PlayerStats.AddCoins(4);
         }
-
         Destroy(other.gameObject);
-
     }
 }

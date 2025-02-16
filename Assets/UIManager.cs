@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-// using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,8 +8,6 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
     [SerializeField] private Text TotalCoinsText;
-    // Start is called before the first frame update
-
      private void Awake()
     {
         if (Instance == null)
@@ -63,15 +60,9 @@ public class UIManager : MonoBehaviour
 
     private void UpdateTotalCoinsUI()
     {
-        if (GlobalGameManager.Instance != null && GlobalGameManager.Instance.PlayerStats != null)
+        if (GlobalGameManager.Instance != null && GlobalGameManager.Instance.PlayerStats != null && TotalCoinsText != null)
         {
             TotalCoinsText.text = GlobalGameManager.Instance.PlayerStats.TotalCoins.ToString();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

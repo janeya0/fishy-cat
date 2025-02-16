@@ -13,14 +13,13 @@ public class Cat2Intro : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        //rb = GetComponent<Rigidbody2D>();
         cat2IntroPlayed = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= StaticScoreHolder.fishCaughtToBeIntroduced[1] && !cat2IntroPlayed)
+        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= GlobalGameManager.Instance.PlayerStats.levelUpThresholds[1] && !cat2IntroPlayed)
         {
             cat2IntroPlayed = true;
             gameObject.SetActive(true);

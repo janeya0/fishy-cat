@@ -10,7 +10,7 @@ public class PlayerStats
     public int CoinMultiplier { get; private set; }
     
 
-    private Dictionary<int, int> levelUpThresholds = new Dictionary<int, int>()
+    public Dictionary<int, int> levelUpThresholds = new Dictionary<int, int>()
     {
         { 1, 10 }, 
         { 2, 20 }, 
@@ -28,6 +28,7 @@ public class PlayerStats
     {
         CurrentLevel = 0;
         CoinMultiplier = 1;
+        TotalCoins = 0;
     }
 
     public void AddCoins(int amount) 
@@ -55,7 +56,7 @@ public class PlayerStats
         CurrentLevel += 1;
         CoinMultiplier += 1;
         OnLevelUp?.Invoke(CurrentLevel);
-        // TODO: update level up text
+        // TODO: update level up text (move from LevelUp.cs to here)
     }
 
     private void PerformCatUnlock()

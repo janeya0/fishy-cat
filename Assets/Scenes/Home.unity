@@ -1319,7 +1319,6 @@ GameObject:
   - component: {fileID: 593624653}
   - component: {fileID: 593624655}
   - component: {fileID: 593624654}
-  - component: {fileID: 593624656}
   m_Layer: 5
   m_Name: '[Text] Coins'
   m_TagString: TotalCoinsText
@@ -1389,19 +1388,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593624652}
   m_CullTransparentMesh: 1
---- !u!114 &593624656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593624652}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52579f75ec88a4634b46f9acf7e3745d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 593624654}
 --- !u!1 &746930324
 GameObject:
   m_ObjectHideFlags: 0

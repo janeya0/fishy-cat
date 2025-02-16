@@ -26,7 +26,6 @@ public class GameManagerIntros : MonoBehaviour
     void UpdateCatIntro(int level)
     {
         temp = Instantiate(spawnObjects[level - 1 >= 0 ? level - 1 : 0], spawnPoint.transform.position, Quaternion.identity);
-        StaticScoreHolder.cat1IntroPlayed = true;
         Invoke("MoveToBack", 3);
     }
 
