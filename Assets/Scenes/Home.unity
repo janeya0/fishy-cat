@@ -1322,7 +1322,7 @@ GameObject:
   - component: {fileID: 593624656}
   m_Layer: 5
   m_Name: '[Text] Coins'
-  m_TagString: Untagged
+  m_TagString: TotalCoinsText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1625,7 +1625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15103b97aee114719815fc3440f35053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 593624654}
 --- !u!1 &964308845
 GameObject:
   m_ObjectHideFlags: 0

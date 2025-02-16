@@ -10,8 +10,20 @@ public class CatManager : MonoBehaviour
     private GameObject temp;
 
     // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
+        StartCoroutine(WaitForGlobalGameManager());
+    }
+
+    private IEnumerator WaitForGlobalGameManager()
+    {
+        while (GlobalGameManager.Instance == null || GlobalGameManager.Instance.PlayerStats == null)
+        {
+            // wait 1 frame
+            yield return null;
+        }
+
         for (int i = 0; i < StaticScoreHolder.fishCaughtToBeIntroduced.Length; ++i)
         {
             if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= StaticScoreHolder.fishCaughtToBeIntroduced[i])
@@ -24,4 +36,5 @@ public class CatManager : MonoBehaviour
             }
         }
     }
+        
 }

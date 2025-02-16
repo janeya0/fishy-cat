@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,6 +21,9 @@ public class PlayerStats
         { 7, 700 }
     };
 
+    public event Action OnTotalCoinsChanged;
+    public event Action<int> OnLevelUp;
+
     public PlayerStats()
     {
         Debug.Log("start in player stats");
@@ -31,6 +35,8 @@ public class PlayerStats
     {
         TotalCoins += amount * CoinMultiplier;
         Debug.Log(TotalCoins);
+        Debug.Log("Firing event...");
+        OnTotalCoinsChanged?.Invoke();
         if (IsLevelUp())
         {
             PerformLevelUp();
@@ -51,6 +57,7 @@ public class PlayerStats
     {
         CurrentLevel += 1;
         CoinMultiplier += 1;
+        OnLevelUp?.Invoke(CurrentLevel);
         // TODO: update level up text
     }
 

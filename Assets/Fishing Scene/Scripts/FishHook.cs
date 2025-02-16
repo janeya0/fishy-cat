@@ -17,7 +17,6 @@ public class FishHook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float newYPos = rb.position.y + newVelY;
         float dirX = Input.GetAxis("Horizontal");
         float dirY = Input.GetAxis("Vertical");
 
