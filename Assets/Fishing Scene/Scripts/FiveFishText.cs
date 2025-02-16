@@ -13,7 +13,7 @@ public class FiveFishText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (StaticScoreHolder.newPlayerScore >= 5)
+        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= 5)
         {
             Destroy(this.gameObject);
         }

@@ -21,7 +21,7 @@ public class Cat3Intro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (StaticScoreHolder.newPlayerScore >=
+        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >=
             StaticScoreHolder.fishCaughtToBeIntroduced[index] &&
             !cat3IntroPlayed)
         {

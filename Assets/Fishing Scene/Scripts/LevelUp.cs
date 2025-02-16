@@ -22,7 +22,7 @@ public class LevelUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (StaticScoreHolder.newPlayerScore < StaticScoreHolder.levels[StaticScoreHolder.currLevel])
+        if (GlobalGameManager.Instance.PlayerStats.TotalCoins < StaticScoreHolder.levels[StaticScoreHolder.currLevel])
         {
             levelUpBtn.interactable = false;
             levelUpBtnText.color = Color.grey;
@@ -36,7 +36,7 @@ public class LevelUp : MonoBehaviour
 
     public void ExecuteLevelUp()
     {
-        if (StaticScoreHolder.newPlayerScore >= StaticScoreHolder.levels[StaticScoreHolder.currLevel]) 
+        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= StaticScoreHolder.levels[StaticScoreHolder.currLevel]) 
         {
             if (StaticScoreHolder.currLevel + 1 < StaticScoreHolder.levels.Length) 
             {

@@ -6,16 +6,56 @@ public class PlayerStats
 {
     public int CurrentLevel { get; private set; }
     public int TotalCoins { get; private set; }
-    public float CoinMultiplier { get; private set; }
-    // Start is called before the first frame update
-    void Start()
+    public int CoinMultiplier { get; private set; }
+    
+
+    private Dictionary<int, int> levelUpThresholds = new Dictionary<int, int>()
     {
-        
+        { 1, 10 }, 
+        { 2, 20 }, 
+        { 3, 50 }, 
+        { 4, 100 },
+        { 5, 200 },
+        { 6, 400 },
+        { 7, 700 }
+    };
+
+    public PlayerStats()
+    {
+        Debug.Log("start in player stats");
+        CurrentLevel = 0;
+        CoinMultiplier = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddCoins(int amount) 
     {
-        
+        TotalCoins += amount * CoinMultiplier;
+        Debug.Log(TotalCoins);
+        if (IsLevelUp())
+        {
+            PerformLevelUp();
+            PerformCatUnlock();
+        }
+    }
+
+    private bool IsLevelUp() 
+    {
+        if (levelUpThresholds.ContainsKey(CurrentLevel + 1) && TotalCoins >= levelUpThresholds[CurrentLevel + 1])
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private void PerformLevelUp()
+    {
+        CurrentLevel += 1;
+        CoinMultiplier += 1;
+        // TODO: update level up text
+    }
+
+    private void PerformCatUnlock()
+    {
+        // TODO: intro new cat for level unlock
     }
 }

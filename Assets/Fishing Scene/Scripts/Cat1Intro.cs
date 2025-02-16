@@ -20,7 +20,7 @@ public class Cat1Intro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (StaticScoreHolder.newPlayerScore >= StaticScoreHolder.fishCaughtToBeIntroduced[0] && !cat1IntroPlayed)
+        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= StaticScoreHolder.fishCaughtToBeIntroduced[0] && !cat1IntroPlayed)
         {
             Debug.Log("cat 1 introduced!");
             cat1IntroPlayed = true;

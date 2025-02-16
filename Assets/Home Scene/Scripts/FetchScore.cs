@@ -10,7 +10,7 @@ public class FetchScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = StaticScoreHolder.newPlayerScore.ToString(); 
+        scoreText.text = GlobalGameManager.Instance.PlayerStats.TotalCoins.ToString(); 
     }
 
     // Update is called once per frame

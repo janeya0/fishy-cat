@@ -14,7 +14,7 @@ public class CatManager : MonoBehaviour
     {
         for (int i = 0; i < StaticScoreHolder.fishCaughtToBeIntroduced.Length; ++i)
         {
-            if (StaticScoreHolder.newPlayerScore >= StaticScoreHolder.fishCaughtToBeIntroduced[i])
+            if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= StaticScoreHolder.fishCaughtToBeIntroduced[i])
             {
                 temp = Instantiate(cats[i], spawnPoints[i].transform.position, Quaternion.identity);
                 temp.name = "Cat";
