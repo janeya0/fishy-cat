@@ -24,7 +24,6 @@ public class Cat2Intro : MonoBehaviour
         {
             cat2IntroPlayed = true;
             gameObject.SetActive(true);
-            Debug.Log("cat 2 introduced!");
             anim.SetBool("playIntro2", true);
         }
     }

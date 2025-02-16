@@ -12,15 +12,12 @@ public class GlobalGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("start");
         if (Instance == null)
         {
-            Debug.Log("instance == null");
             Instance = this;
             DontDestroyOnLoad(gameObject);
         } 
         else {
-            Debug.Log("instance != null");
             Destroy(gameObject);
         }
         

@@ -22,7 +22,6 @@ public class Cat1Intro : MonoBehaviour
     {
         if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= StaticScoreHolder.fishCaughtToBeIntroduced[0] && !cat1IntroPlayed)
         {
-            Debug.Log("cat 1 introduced!");
             cat1IntroPlayed = true;
             anim.SetBool("playIntro", true);
         }

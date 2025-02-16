@@ -34,18 +34,16 @@ public class SecondSpawnObjectScriptRightSide : MonoBehaviour
             ranIdxY = Random.Range(0, rangeOfSpeeds.Length);
             newVelX = rangeOfSpeeds[ranIdxX];
             newVelY = rangeOfSpeeds[ranIdxY];
-            //Debug.Log("newVelX: " + newVelX);
-            //Debug.Log("newVelY: " + newVelY);
         }
         float newYPos = rb.position.y + newVelY;
 
         // out of bounds: y
-        if (newYPos > 1) // newYPos < -7 || 
+        if (newYPos > 1)
         {
             newVelY *= -1;
         }
         rb.velocity = new Vector3(newVelX, newVelY);
-        if (rb.position.x < -15 || rb.position.x > 15 || rb.position.y < -7) // || rb.position.y > 2
+        if (rb.position.x < -15 || rb.position.x > 15 || rb.position.y < -7)
         {
             Destroy(gameObject);
         }

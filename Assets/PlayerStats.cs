@@ -26,7 +26,6 @@ public class PlayerStats
 
     public PlayerStats()
     {
-        Debug.Log("start in player stats");
         CurrentLevel = 0;
         CoinMultiplier = 1;
     }
@@ -34,8 +33,6 @@ public class PlayerStats
     public void AddCoins(int amount) 
     {
         TotalCoins += amount * CoinMultiplier;
-        Debug.Log(TotalCoins);
-        Debug.Log("Firing event...");
         OnTotalCoinsChanged?.Invoke();
         if (IsLevelUp())
         {

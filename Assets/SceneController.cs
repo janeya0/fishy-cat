@@ -26,7 +26,6 @@ public class SceneController : MonoBehaviour
 
     public void LoadFishingScene() 
     {
-        Debug.Log("SDKJFLKDSJF");
         SceneManager.LoadScene(Scene.Fishing.ToString());
     }
 

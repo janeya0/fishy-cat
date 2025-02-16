@@ -11,8 +11,6 @@ public class Lr : MonoBehaviour
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
-        //hook = GameObject.FindGameObjectWithTag("Hook").GetComponent<FishHook>();
-        //Debug.Log(hook);
     }
 
     public void SetUpLine(Transform[] points)

@@ -26,8 +26,6 @@ public class SecondSpawnObjectScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        //Debug.Log(timer);
-
         if (timer > timeBetweenDirectionSwitch)
         {
             timer = 0;
@@ -36,16 +34,15 @@ public class SecondSpawnObjectScript : MonoBehaviour
             newVelX = rangeOfSpeeds[ranIdxX];
             newVelY = rangeOfSpeeds[ranIdxY];
         }
-        //float newXPos = rb.position.x + newVelX;
         float newYPos = rb.position.y + newVelY;
 
         // out of bounds: y
-        if (newYPos > 1) // newYPos < -7 || 
+        if (newYPos > 1)
         {
             newVelY *= -1;
         }
         rb.velocity = new Vector3(newVelX, newVelY);
-        if (rb.position.x < -15 || rb.position.x > 15 || rb.position.y < -7) // || rb.position.y > 2
+        if (rb.position.x < -15 || rb.position.x > 15 || rb.position.y < -7)
         {
             Destroy(gameObject);
         }
