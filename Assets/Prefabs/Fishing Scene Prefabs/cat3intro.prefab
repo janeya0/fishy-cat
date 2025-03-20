@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db1fdbf2cf14497bac106c38be237c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 3508182817013684387}
   timer: 0
-  rb: {fileID: 0}
+  rb: {fileID: 3508182817013684399}
   cat3IntroPlayed: 0
   index: 2

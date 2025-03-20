@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede7f0dc8ed844b9cb2b2e904d3862b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 5154228245329260372}
   timer: 0
-  rb: {fileID: 0}
+  rb: {fileID: 5154228245329260376}
   cat1IntroPlayed: 0
 --- !u!50 &5154228245329260376
 Rigidbody2D:

@@ -19,7 +19,7 @@ public class Cat2Intro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= GlobalGameManager.Instance.PlayerStats.levelUpThresholds[1] && !cat2IntroPlayed)
+        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= GlobalGameManager.Instance.PlayerStats.levelUpThresholds[2] && !cat2IntroPlayed)
         {
             cat2IntroPlayed = true;
             gameObject.SetActive(true);

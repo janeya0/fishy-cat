@@ -20,7 +20,7 @@ public class Cat1Intro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= GlobalGameManager.Instance.PlayerStats.levelUpThresholds[0] && !cat1IntroPlayed)
+        if (GlobalGameManager.Instance.PlayerStats.TotalCoins >= GlobalGameManager.Instance.PlayerStats.levelUpThresholds[1] && !cat1IntroPlayed)
         {
             cat1IntroPlayed = true;
             anim.SetBool("playIntro", true);
